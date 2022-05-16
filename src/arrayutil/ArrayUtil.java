@@ -60,7 +60,7 @@ public class ArrayUtil {
         for(int i = 0;i < array.length;i++) {
             sumAverage += array[i];
         }
-        System.out.println(sumAverage / 2);
+        System.out.println(sumAverage / array.length);
 
         //The sum of elements array
         System.out.println("The sum of elements array is ");
