@@ -38,7 +38,8 @@ public class CharArrayExample {
                 System.out.println("False");
             }else if(bobArray.length == 3){
             if(bobArray[0] == 'b' && bobArray[2] == 'b')
-                System.out.println(true);
+                System.out.println("true");else
+                System.out.println("False");
             }else if(bobArray.length < 3){
             System.out.println("False");
         }
