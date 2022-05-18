@@ -28,13 +28,20 @@ public class CharArrayExample {
         System.out.println("An array have word BOB? ");
         char[] bobArray = {'b','a','b','o','l','a'};
         char countOfSymbolB = 0;
-        for(int i = 0; i < bobArray.length - 2; i++){
-            if(bobArray[i] == 'b' && bobArray[i+2] == 'b' )
-                countOfSymbolB++;
-        }
-        if(countOfSymbolB >= 1)
-            System.out.println("True");else
+        if(bobArray.length > 3 ) {
+            for (int i = 0; i < bobArray.length - 2; i++) {
+                if (bobArray[i] == 'b' && bobArray[i + 2] == 'b')
+                    countOfSymbolB++;
+            }
+            if(countOfSymbolB >= 1)
+                System.out.println("True");else
+                System.out.println("False");
+            }else if(bobArray.length == 3){
+            if(bobArray[0] == 'b' && bobArray[2] == 'b')
+                System.out.println(true);
+            }else if(bobArray.length < 3){
             System.out.println("False");
+        }
 
         //5)Print symbols not space
         System.out.println("Symbols none space is ");
