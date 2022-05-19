@@ -7,8 +7,9 @@ public class CharArrayExample {
         char c = 'o';
         int count = 0;
         for(int i = 0; i < chars.length; i++){
-            if(chars[i] == c)
+            if(chars[i] == c){
                 count++;
+            }
         }
         System.out.println("Count of symbol 'o' is " + count);
 
@@ -18,29 +19,28 @@ public class CharArrayExample {
             System.out.println(chars[chars.length / 2]);
 
         //3)Print true or false
-        System.out.println("2 next symbols is'ly' ");
+        System.out.println("2 next symbols is 'ly' ");
         char[] chars1 ={'j','a','v','a','l','o','l','y'};
-        if(chars1[chars1.length - 2] == 'l' && chars1[chars1.length - 1] == 'y'  )
-            System.out.println("true");else
+        if(chars1[chars1.length - 2] == 'l' && chars1[chars1.length - 1] == 'y'){
+            System.out.println("true");
+        }else
             System.out.println("false");
 
         //4)BobArray
         System.out.println("An array have word BOB? ");
-        char[] bobArray = {'b','a','b','o','l','a'};
+        char[] bobArray = {'b','a','b'};
         char countOfSymbolB = 0;
-        if(bobArray.length > 3 ) {
+        if(bobArray.length >= 3 ) {
             for (int i = 0; i < bobArray.length - 2; i++) {
-                if (bobArray[i] == 'b' && bobArray[i + 2] == 'b')
+                if (bobArray[i] == 'b' && bobArray[i + 2] == 'b'){
                     countOfSymbolB++;
+                }
             }
-            if(countOfSymbolB >= 1)
-                System.out.println("True");else
+            if(countOfSymbolB >= 1){
+                System.out.println("True");
+            }else
                 System.out.println("False");
-            }else if(bobArray.length == 3){
-            if(bobArray[0] == 'b' && bobArray[2] == 'b')
-                System.out.println("true");else
-                System.out.println("False");
-            }else if(bobArray.length < 3){
+            }else{
             System.out.println("False");
         }
 
@@ -48,8 +48,9 @@ public class CharArrayExample {
         System.out.println("Symbols none space is ");
         char[] text = {' ',' ','b','a','r','e','v',' ',' '};
         for(int i = 0; i < text.length; i++){
-            if(text[i] != ' ' )
+            if(text[i] != ' '){
                 System.out.println(text[i]);
+            }
         }
 
 
