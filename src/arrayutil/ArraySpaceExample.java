@@ -18,8 +18,12 @@ public class ArraySpaceExample {
                 break;
             }
         }
-        for (int j = indexOfFirst; j <= indexOfLast; j++){
-            System.out.print(spaceArray[j]);
+        char[] result = new char[indexOfLast - indexOfFirst + 1];
+        for (int i = 0; i < result.length; i++){
+                result[i] = spaceArray[indexOfFirst + i];
+        }
+        for(char a:result){
+            System.out.print(a);
         }
     }
 }
