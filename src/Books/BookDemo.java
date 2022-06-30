@@ -100,7 +100,6 @@ public class BookDemo implements BookInterface {
             if(genderAuthor1.equals("MALE") || genderAuthor1.equals("FEMALE")){
                 genderAuthor = genderAuthor1;
                 run = false;
-                break;
             }else{
                 System.out.println("Invalid gender name");
                 addAuthor();
@@ -110,6 +109,5 @@ public class BookDemo implements BookInterface {
         Author author = new Author(nameAuthor,surnameAuthor,emailAuthor,genderAuthor);
         authorStorage.add(author);
         return author;
-
     }
 }
