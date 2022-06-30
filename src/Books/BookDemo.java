@@ -1,5 +1,7 @@
 package Books;
 
+import Books.Author.Author;
+import Books.Author.AuthorStorage;
 import Students.Student;
 import Students.StudentStorage;
 
@@ -9,6 +11,10 @@ public class BookDemo implements BookInterface {
 
     private static Scanner scanner = new Scanner(System.in);
     private  static BookStorage bookStorage = new BookStorage();
+
+    private static AuthorStorage authorStorage = new AuthorStorage();
+
+
 
     public static void main(String[] args) {
 
@@ -21,6 +27,7 @@ public class BookDemo implements BookInterface {
             System.out.println("Please input " + PRINT_BOOKS_BY_GENRE + " for to print books by genre");
             System.out.println("Please input " + PRINT_BOOKS_BY_PRICE_RANGE + " for print books by price range");
             int command = Integer.parseInt(scanner.nextLine());
+
 
             switch (command){
                 case EXIT:
@@ -57,10 +64,12 @@ public class BookDemo implements BookInterface {
     }
 
     private static  void addBook(){
+
         System.out.println("Please input book title");
         String title = scanner.nextLine();
-        System.out.println("Please input book author name ");
-        String authorName = scanner.nextLine();
+        System.out.println("Please input book author by fields ");
+        Author author = addAuthor();
+
         System.out.println("Please input book price");
         String priceStr = scanner.nextLine();
         System.out.println("Please input books count");
@@ -70,8 +79,37 @@ public class BookDemo implements BookInterface {
 
         double price = Double.parseDouble(priceStr);
         int count = Integer.parseInt(countStr);
-        Book book = new Book(title,authorName,price,count,genre);
+        Book book = new Book(title,author,price,count,genre);
+
         bookStorage.add(book);
         System.out.println("Thank you");
+    }
+
+    private static Author addAuthor(){
+        boolean run = true;
+        System.out.println("Please input author name");
+        String nameAuthor = scanner.nextLine();
+        System.out.println("Please input author surname");
+        String surnameAuthor = scanner.nextLine();
+        System.out.println("Please input author email");
+        String emailAuthor = scanner.nextLine();
+        String genderAuthor = "";
+        while (run){
+            System.out.println("Please input author gender MALE OR FEMALE");
+            String genderAuthor1 = scanner.nextLine();
+            if(genderAuthor1.equals("MALE") || genderAuthor1.equals("FEMALE")){
+                genderAuthor = genderAuthor1;
+                run = false;
+                break;
+            }else{
+                System.out.println("Invalid gender name");
+                addAuthor();
+            }
+
+        }
+        Author author = new Author(nameAuthor,surnameAuthor,emailAuthor,genderAuthor);
+        authorStorage.add(author);
+        return author;
+
     }
 }

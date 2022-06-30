@@ -31,7 +31,7 @@ public class BookStorage {
 
     public void printBookByAuthorName(String authorName) {
         for (int i = 0; i < size; i++){
-            if(array[i].getAuthorName().equals(authorName)){
+            if(array[i].getAuthor().equals(authorName)){
                 System.out.println(array[i]);
             }
         }
@@ -52,6 +52,8 @@ public class BookStorage {
             }
         }
     }
+
+
 
 
 
