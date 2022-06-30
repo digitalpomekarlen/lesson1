@@ -102,7 +102,6 @@ public class BookDemo implements BookInterface {
                 run = false;
             }else{
                 System.out.println("Invalid gender name");
-                addAuthor();
             }
 
         }
